@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    {{ if not (eq .Title $.Site.Title) }}
+      <title>{{ .Title }} — {{ $.Site.Title }}</title>
+    {{ else }}
+      <title>{{ $.Site.Title }}</title>
+    {{ end }}
+
+    <link rel="apple-touch-icon" href="/krabficon.png">
+    <link rel="icon" type="image/png" href="/krabficon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/krabficon.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/krabficon.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/krabficon.png" sizes="16x16">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Kushaiah Felisilda" />
+    <link rel="alternate" type="application/rss+xml" href="/articles/index.xml" title="Kushaiah Felisilda: Articles" />
+    <link rel="alternate" type="application/rss+xml" href="/newsletter/index.xml" title="Kushaiah Felisilda: Newsletter" />
+
+
+
+    <link rel="stylesheet" href="https://use.typekit.net/auk1oty.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+    {{ with resources.Get "css/reset.css" | minify }}
+      <style>{{ .Content | safeCSS }}</style>
+    {{ end }}
+    {{ with resources.Get "css/site.css" | minify }}
+      <style>{{ .Content | safeCSS }}</style>
+    {{ end }}
+
+    {{ block "meta" . }}
+      <meta name="description" content="I'm a filmmaker. I'm intereted in technology & I love exploring the internet." />
+      <meta property="og:title" content="{{ .Title }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:url" content="{{ .Permalink }}" />
+      <meta property="og:image" content="{{ "media/krabficon.png" | absURL }}" />
+      <meta property="og:description" content="I'm a filmmaker. I'm intereted in technology & I love exploring the internet." />
+    {{ end }}
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrap">
+        <div class="header-grid">
+          <strong>
+            <a href="/">Kushaiah Felisilda</a>
+            <br> <span>Filmmaker & Internet Explorer</span>
+          </strong>
+          <nav>
+            <ul>
+              {{ $section := index (split .RelPermalink "/") 1 }}
+              <li class="{{ cond (eq "posts" $section) "active" "" }}">
+                <a href="/about">About</a>
+              </li>
+              <li class="{{ cond (eq "posts" $section) "active" "" }}">
+                <a href="/posts">Blog</a>
+              </li>
+            </ul>
+          </nav>
+          <nav>
+            <ul>
+              <li><a href="https://twitter.com/krabf_" rel="me">Twitter</a></li>
+              <li><a href="/index.xml">RSS</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="wrap">
+        {{ block "main" . }}{{ end }}
+      </div>
+    </main>
+
+    {{ with resources.Get "css/chroma.css" | minify }}
+      <style>{{ .Content | safeCSS }}</style>
+    {{ end }}
+  </body>
+</html>
