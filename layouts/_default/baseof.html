@@ -53,11 +53,11 @@
           <nav>
             <ul>
               {{ $section := index (split .RelPermalink "/") 1 }}
-              <li class="{{ cond (eq "about" $section) "active" "" }}">
-                <a href="/about">About</a>
-              </li>
-              <li class="{{ cond (eq "blog" $section) "active" "" }}">
+              <li class="{{ cond (eq "posts" $section) "active" "" }}">
                 <a href="/posts">Blog</a>
+              </li>
+              <li class="{{ cond (eq $section "about") "active" "" }}">
+                <a href="/about">About</a>
               </li>
             </ul>
           </nav>
