@@ -54,10 +54,10 @@
             <ul>
               {{ $section := index (split .RelPermalink "/") 1 }}
               <li class="{{ cond (eq "posts" $section) "active" "" }}">
-                <a href="/about">About</a>
+                <a href="/posts">Blog</a>
               </li>
-              <li class="{{ cond (eq $section "posts") "active" "" }}">
-                <a href="/posts">Blog/a>
+              <li class="{{ cond (eq $section "newsletter") "active" "" }}">
+                <a href="/newsletter">Newsletter</a>
               </li>
             </ul>
           </nav>
