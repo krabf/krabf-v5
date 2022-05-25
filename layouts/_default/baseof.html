@@ -16,12 +16,12 @@
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Kushaiah Felisilda" />
-    <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Kushaiah Felisilda: Blog" />
-    <link rel="alternate" type="application/rss+xml" href="/about/index.xml" title="Kushaiah Felisilda: About" />
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Sebastian De Deyne" />
+    <link rel="alternate" type="application/rss+xml" href="/articles/index.xml" title="Sebastian De Deyne: Articles" />
+    <link rel="alternate" type="application/rss+xml" href="/newsletter/index.xml" title="Sebastian De Deyne: Newsletter" />
 
-    <link rel="webmention" href="https://webmention.io/user111111/webmention" />
-    <link rel="pingback" href="https://webmention.io/user111111/xmlrpc" />
+    <link rel="webmention" href="https://webmention.io/sebastiandedeyne.com/webmention" />
+    <link rel="pingback" href="https://webmention.io/sebastiandedeyne.com/xmlrpc" />
 
     <link rel="stylesheet" href="https://use.typekit.net/auk1oty.css">
     <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
@@ -33,13 +33,13 @@
     {{ end }}
 
     {{ block "meta" . }}
-      <meta name="description" content="I'm a filmmaker. I'm intereted in technology & I love exploring the internet." />
+      <meta name="description" content="I'm a web developer and designer. I build websites & interfaces with JavaScript, CSS and PHP." />
       <meta property="og:title" content="{{ .Title }}" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:url" content="{{ .Permalink }}" />
-      <meta property="og:image" content="{{ "media/krabficon.png" | absURL }}" />
-      <meta property="og:description" content="I'm a filmmaker. I'm intereted in technology & I love exploring the internet." />
+      <meta property="og:image" content="{{ "media/me.jpg" | absURL }}" />
+      <meta property="og:description" content="I'm a web developer and designer. I build websites & interfaces with JavaScript, CSS and PHP." />
     {{ end }}
   </head>
   <body>
@@ -47,23 +47,23 @@
       <div class="wrap">
         <div class="header-grid">
           <strong>
-            <a href="/">Kushaiah Felisilda</a>
-            <br> <span>Filmmaker & Internet Explorer</span>
+            <a href="/">Sebastian De Deyne</a>
+            <br> <span>Designer & developer at Spatie</span>
           </strong>
           <nav>
             <ul>
               {{ $section := index (split .RelPermalink "/") 1 }}
-              <li class="{{ cond (eq "about" $section) "active" "" }}">
-                <a href="/about">About</a>
-              </li>
-              <li class="{{ cond (eq $section "blog") "active" "" }}">
+              <li class="{{ cond (eq "posts" $section) "active" "" }}">
                 <a href="/posts">Blog</a>
+              </li>
+              <li class="{{ cond (eq $section "newsletter") "active" "" }}">
+                <a href="/newsletter">Newsletter</a>
               </li>
             </ul>
           </nav>
           <nav>
             <ul>
-              <li><a href="https://twitter.com/krabf_" rel="me">Twitter</a></li>
+              <li><a href="https://twitter.com/sebdedeyne" rel="me">Twitter</a></li>
               <li><a href="/index.xml">RSS</a></li>
             </ul>
           </nav>
