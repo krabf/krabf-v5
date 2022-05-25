@@ -15,9 +15,7 @@ If you want to get to know more about me, please send me an [email](mailto:krabf
 Get in touch:
 
 [Twitter](https://twitter.com/krabf_)
-
 [Instagram](https://instagram.com/krabf)
-
 [Email](mailto:krabfx@gmail.com)
 
 My hobby is powered by my full-time time job and [your donations](https://buymeacoff.ee/krabf).
